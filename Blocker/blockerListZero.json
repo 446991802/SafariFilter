@@ -1,0 +1,13 @@
+[
+    {
+        "trigger": {
+            "url-filter": ".*",
+            "if-domain": ["www.sb.com"]
+        },
+        "action": {
+            "type": "block"
+        }
+    }
+]
+ 
+ 
