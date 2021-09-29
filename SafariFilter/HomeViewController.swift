@@ -24,7 +24,6 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // 测试拦截 https://fanyi.baidu.com/
-        
         isEnableSwitch.isOn = SharedUserDeafults.query(kw: SharedUserDeafults.Keys.isEnableState)
         isAdvSwitch.isOn    = SharedUserDeafults.query(kw: SharedUserDeafults.Keys.isBlockerState)
         isJumpSwitch.isOn   = SharedUserDeafults.query(kw: SharedUserDeafults.Keys.isSkipAppState)

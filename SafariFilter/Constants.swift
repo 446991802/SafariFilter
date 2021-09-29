@@ -11,15 +11,16 @@ import UIKit
 struct Constants {
     
     // 应用ID
-    static let appIdentifier = "com.zzq.safari"
+    static let appIdentifier = "com.zzq.demo"
     
     // 广告拦截
-    static let interceptorIdentifier = "com.zzq.safari.Interceptor"
+    static let interceptorIdentifier = "com.zzq.demo.jump"
     
     // 跳转拦截
-    static let blockerIdentifier = "com.zzq.safari.Blocker"
+    static let blockerIdentifier = "com.zzq.demo.blocker"
     
     // 应用组ID
-    static let appGroupIdentifier = "group.com.zzq.safari"
+    static let appGroupIdentifier = "group.com.zzq.demo"
 }
+
 

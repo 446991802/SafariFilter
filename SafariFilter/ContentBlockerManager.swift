@@ -24,7 +24,6 @@ class ContentBlockerManager: NSObject {
             // 错误检查
             if let stateError = error {
                 print("\(identifier)#\(stateError.localizedDescription as Any)")
-                return
             }
             // 权限状态
             print("\(identifier)#\(state?.isEnabled as Any)")
