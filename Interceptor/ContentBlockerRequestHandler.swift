@@ -11,12 +11,29 @@ import MobileCoreServices
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 
     func beginRequest(with context: NSExtensionContext) {
-        let attachment = NSItemProvider(contentsOf: Bundle.main.url(forResource: "blockerList", withExtension: "json"))!
+        let sharedUserDeafults = UserDefaults(suiteName: SharedUserDeafults.suiteName)
         
-        let item = NSExtensionItem()
-        item.attachments = [attachment]
+        guard let mainOn = sharedUserDeafults?.bool(forKey: SharedUserDeafults.Keys.isEnableState) else { return }
+        guard let adsBlockerOn = sharedUserDeafults?.bool(forKey: SharedUserDeafults.Keys.isSkipAppState) else { return }
         
-        context.completeRequest(returningItems: [item], completionHandler: nil)
+        if mainOn {
+            if adsBlockerOn {
+                let attachment = NSItemProvider(contentsOf: Bundle.main.url(forResource: "blockerList", withExtension: "json"))!
+                let item = NSExtensionItem()
+                item.attachments = [attachment]
+                context.completeRequest(returningItems: [item], completionHandler: nil)
+            } else {
+                let attachment = NSItemProvider(contentsOf: Bundle.main.url(forResource: "blockerListZero", withExtension: "json"))!
+                let item = NSExtensionItem()
+                item.attachments = [attachment]
+                context.completeRequest(returningItems: [item], completionHandler: nil)
+            }
+        } else {
+            let attachment = NSItemProvider(contentsOf: Bundle.main.url(forResource: "blockerListZero", withExtension: "json"))!
+            let item = NSExtensionItem()
+            item.attachments = [attachment]
+            context.completeRequest(returningItems: [item], completionHandler: nil)
+        }
     }
     
 }

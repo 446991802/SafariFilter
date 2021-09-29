@@ -191,6 +191,7 @@
                     <connections>
                         <outlet property="isAdvSwitch" destination="o3Y-Ll-Gxr" id="Sfc-GB-SWm"/>
                         <outlet property="isEnableSwitch" destination="Hj4-AB-6a4" id="QXt-Lo-rbW"/>
+                        <outlet property="isJumpSwitch" destination="LNF-7H-1uU" id="BBj-34-0ff"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opr-Sa-EK1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

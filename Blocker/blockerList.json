@@ -1,13 +1,5 @@
 [
-    {
-        "trigger": {
-            "url-filter": "fanyi.baidu.com"
-        },
-        "action": {
-            "type": "css-display-none",
-            "selector": "#new-header"
-        }
-    },
+  
     {
         "trigger": {
             "url-filter": "fanyi.baidu.com"
@@ -24,15 +16,6 @@
         "action": {
             "type": "css-display-none",
             "selector": ".ad, section[class^=\"article\"]"
-        }
-    },
-    {
-        "trigger": {
-            "url-filter": "fanyi.baidu.com"
-        },
-        "action": {
-            "type": "css-display-none",
-            "selector": ".ad, section[class^=\"bottom-intro\"]"
         }
     }
     

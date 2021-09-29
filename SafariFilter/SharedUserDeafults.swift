@@ -18,6 +18,8 @@ struct  SharedUserDeafults {
         static let isEnableState   = "onEnableState"      // 页面是否开启 & 关闭
         // 是否开启广告拦截
         static let isBlockerState       = "onBlockerState"          // 配置是否过滤 & 清零
+        // 是否拦截跳转APP
+        static let isSkipAppState       = "onSkipAppState"          // 跳转应用过滤 & 清零
         
 
     }

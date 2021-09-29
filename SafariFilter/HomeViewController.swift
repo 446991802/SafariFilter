@@ -15,6 +15,9 @@ class HomeViewController: UIViewController {
     // 广告配置
     @IBOutlet weak var isAdvSwitch: UISwitch!
     
+    // 跳转应用
+    @IBOutlet weak var isJumpSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +27,7 @@ class HomeViewController: UIViewController {
         
         isEnableSwitch.isOn = SharedUserDeafults.query(kw: SharedUserDeafults.Keys.isEnableState)
         isAdvSwitch.isOn    = SharedUserDeafults.query(kw: SharedUserDeafults.Keys.isBlockerState)
+        isJumpSwitch.isOn   = SharedUserDeafults.query(kw: SharedUserDeafults.Keys.isSkipAppState)
     }
     
 
@@ -53,7 +57,8 @@ class HomeViewController: UIViewController {
             ContentBlockerManager.default.checkUpWith(identifier: ContentBlockerManager.identifier_bb)
             break
         case 1002:
-
+            SharedUserDeafults.replace(kw: SharedUserDeafults.Keys.isSkipAppState, isValue: sender.isOn)
+            ContentBlockerManager.default.checkUpWith(identifier: ContentBlockerManager.identifier_aa)
             break
         default:
             break
