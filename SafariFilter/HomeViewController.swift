@@ -49,18 +49,17 @@ class HomeViewController: UIViewController {
         switch sender.tag {
         case 1000:
             SharedUserDeafults.replace(kw: SharedUserDeafults.Keys.isEnableState, isValue: sender.isOn)
-            ContentBlockerManager.default.refreshAll()
             break
         case 1001:
             SharedUserDeafults.replace(kw: SharedUserDeafults.Keys.isBlockerState, isValue: sender.isOn)
-            ContentBlockerManager.default.checkUpWith(identifier: ContentBlockerManager.identifier_bb)
             break
         case 1002:
             SharedUserDeafults.replace(kw: SharedUserDeafults.Keys.isSkipAppState, isValue: sender.isOn)
-            ContentBlockerManager.default.checkUpWith(identifier: ContentBlockerManager.identifier_aa)
             break
         default:
             break
         }
+        // 刷新
+        ContentBlockerManager.default.refreshAll()
     }
 }
